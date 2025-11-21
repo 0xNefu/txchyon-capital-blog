@@ -1,1 +1,19 @@
-
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+const posts = (await getCollection('blog')).sort((a, b) =&gt; http://b.data.pubDate.valueOf() - http://a.data.pubDate.valueOf());
+---
+&lt;Layout title="Txchyon Capital – All Research"&gt;
+  &lt;div class="max-w-4xl mx-auto px-6 py-20"&gt;
+    &lt;h1 class="text-4xl font-bold mb-12"&gt;All Research&lt;/h1&gt;
+    &lt;div class="grid gap-8"&gt;
+      {http://posts.map(post =&gt; (
+        &lt;a href={`/posts/${post.slug}`} class="block p-8 bg-gray-900 rounded-xl hover:bg-gray-800 transition"&gt;
+          &lt;h2 class="text-2xl font-bold text-cyan-400 mb-2"&gt;{http://post.data.title}&lt;/h2&gt;
+          &lt;p class="text-gray-400"&gt;{http://post.data.description}&lt;/p&gt;
+          &lt;time class="text-sm text-gray-500"&gt;{http://post.data.pubDate.toDateString()}&lt;/time&gt;
+        &lt;/a&gt;
+      ))}
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/Layout&gt;
