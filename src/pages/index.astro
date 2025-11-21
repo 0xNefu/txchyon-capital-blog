@@ -1,1 +1,19 @@
+---
+import Layout from '../layouts/Layout.astro';
+import AsterPrice from '../components/AsterPrice.astro';
+---
 
+&lt;Layout title="Txchyon Capital – Aster Perpetual Trading"&gt;
+  &lt;div class="max-w-4xl mx-auto px-6 py-20 text-center"&gt;
+    &lt;h1 class="text-6xl md:text-8xl font-bold mb-8 bg-gradient-to-r from-cyan-400 to-purple-600 bg-clip-text text-transparent"&gt;
+      Txchyon Capital
+    &lt;/h1&gt;
+    &lt;p class="text-xl text-gray-300 mb-12"&gt;
+      Multi-strategy trading firm • Aster perpetuals • Real yields
+    &lt;/p&gt;
+    &lt;AsterPrice client:load /&gt;
+    &lt;p class="mt-16 text-lg"&gt;
+      Blog coming soon — stacking $ASTER in the meantime.
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/Layout&gt;
