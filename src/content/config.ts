@@ -1,7 +1,7 @@
 import { z, defineCollection } from 'astro:content';
 
 const blog = defineCollection({
-  type: 'content',                    // ← THIS LINE WAS MISSING
+  type: 'content',   // ← this line
   schema: z.object({
     title: z.string(),
     description: z.string(),
