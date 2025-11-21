@@ -1,1 +1,20 @@
+---
+---
+&lt;div class="text-center my-12"&gt;
+  &lt;p class="text-gray-400 text-sm"&gt;ASTER Live Price&lt;/p&gt;
+  &lt;div id="aster-price" class="text-5xl font-bold text-cyan-400"&gt;Loading...&lt;/div&gt;
+&lt;/div&gt;
 
+&lt;script&gt;
+  async function fetchAster() {
+    try {
+      const res = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=aster&vs_currencies=usd');
+      const data = await res.json();
+      document.getElementById('aster-price').innerText = '$' + data.aster.usd.toFixed(4);
+    } catch (e) {
+      document.getElementById('aster-price').innerText = 'API down';
+    }
+  }
+  fetchAster();
+  setInterval(fetchAster, 15000);
+&lt;/script&gt;
