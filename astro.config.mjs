@@ -3,5 +3,6 @@ import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
   integrations: [tailwind()],
-  output: 'static'
+  output: 'static',
+  base: '/'  // Ensures root path serves index.html correctly in Pages
 });
